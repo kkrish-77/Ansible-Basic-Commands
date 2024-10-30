@@ -1,0 +1,62 @@
+# For logging into another remote system
+     
+     ssh root@IpAddress(remote-system)
+
+# For logging passwordlessly---
+
+    ssh-keygen 
+
+    #The next step is to copy the keygen that will be linked to the remote-system IpAddress 
+
+        ssh-copy-id IpAddress(remote-system)
+
+# Installing Ansible 
+
+    sudo apt install ansible
+         yum
+         dnf   ### According to your Ubuntu distribution ###
+
+# If it presents any error :- "Unable to Find a match"
+
+    sudo apt install epel-release
+         yum
+         dnf   ### According to your Ubuntu distribution ###
+
+# To check if Ansible is installed
+
+    ansible --version
+
+# To check the location and configuration of ansible 
+
+    cd /etc/ansible
+    ls - ltr    #It will list all the files of Ansible
+
+# TO initialize and create ansible playbook
+
+    vim <name-of-file>.yml
+
+# Basic Ansible playbook
+
+---
+- name: Basic playbook
+  hosts: localhost
+
+  tasks:
+  - name: Test Connectivity
+    ping:  
+
+#  To run the ansible playbook
+
+    ansible-playbook <file-name>
+
+# playbook for Printing the message
+
+---
+- name: Basic playbook
+  hosts: localhost
+
+  tasks:
+  - name: "Print the Output "
+    debug: msg="Message that has to be printed"  
+
+    
