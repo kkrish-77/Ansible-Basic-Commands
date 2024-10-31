@@ -1,4 +1,4 @@
-# For logging into another remote system
+# For logging into another remote system but it will enquire for your password
      
      ssh root@IpAddress(remote-system)
 
@@ -9,6 +9,10 @@
     #The next step is to copy the keygen that will be linked to the remote-system IpAddress 
 
         ssh-copy-id IpAddress(remote-system)
+
+# Another way of logging to into it without using password
+
+    ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
 
 # Installing Ansible 
 
